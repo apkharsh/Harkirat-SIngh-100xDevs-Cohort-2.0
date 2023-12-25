@@ -1,0 +1,59 @@
+{
+    "cells": [
+        {
+            "language": "javascript",
+            "source": [
+                "const fs = require('fs');\r\n\r\nfs.readFile('temp.txt', 'utf-8', (err, data) => {\r\n    console.log(data);\r\n});\r\n\r\n\r\nfor(let i = 0; i < 100; i++) {\r\n    console.log(i);\r\n}\r\n\r\nconsole.log('end');"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "0",
+                                "96",
+                                "97",
+                                "98",
+                                "99",
+                                "end",
+                                "",
+                                "hello this is a temp file to test async nature of javascript",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log('start');\r\n\r\nsetTimeout(() => {\r\n    console.log('setTimeout');\r\n}, 5000);\r\n\r\nconsole.log('end');\r\n\r\n\r\n// when we execute the code then first start will be logged and settimout will send our arrow function in the webApi to wait for 5 seconds and then it will be sent to the callback queue and then it will be sent to the call stack to be executed. But before that end will be logged and then the callback queue will send the arrow function to the call stack to be executed. So the output will be start, end, setTimeout.\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "start",
+                                "end",
+                                "",
+                                "setTimeout",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

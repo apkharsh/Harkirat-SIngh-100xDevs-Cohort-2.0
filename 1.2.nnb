@@ -1,0 +1,118 @@
+{
+    "cells": [
+        {
+            "language": "javascript",
+            "source": [
+                "const initialArray = [1, 2, 3, 4, 5];\r\nconst secondArray = [6, 7, 8, 9];\r\n\r\n\r\nconst concatArray = initialArray.concat(secondArray);\r\nconsole.log(concatArray); // [1, 2, 3, 4, 5, 6, 7, 8, 9]\r\n\r\nfor (let i = 0; i < secondArray.length; i++) {\r\n    initialArray.push(secondArray[i]);\r\n}\r\n\r\n\r\nconsole.log(initialArray); // [1, 2, 3, 4, 5, 6, 7, 8, 9]\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[",
+                                "  1, 2, 3, 4, 5,",
+                                "  6, 7, 8, 9",
+                                "]",
+                                "[",
+                                "  1, 2, 3, 4, 5,",
+                                "  6, 7, 8, 9",
+                                "]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const array = [1, 2, 3, 4, 5];\r\n\r\nconst logItems = function (element) {\r\n    console.log(element);\r\n};\r\n\r\narray.forEach(logItems); // 1 2 3 4 5\r\n//  array.forEach(function (element)) this expects a function as an argument\r\n\r\n// alternate way to write the above code\r\narray.forEach(function (element) {\r\n    console.log(element);\r\n});\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "1",
+                                "2",
+                                "3",
+                                "4",
+                                "5",
+                                "1",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function log1(){\r\n    console.log('inside log1');\r\n}\r\n\r\nfunction log2(){\r\n    console.log('inside log2');\r\n}\r\n\r\nfunction doAnything(something){\r\n    something();\r\n}\r\n\r\ndoAnything(log1);\r\ndoAnything(log2);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "inside log1",
+                                "inside log2",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "class Animal{\r\n    constructor(name, legsCount, speaks){\r\n        this.name = name;\r\n        this.legsCount = legsCount;\r\n        this.speaks = speaks;\r\n    }\r\n\r\n    sayName(){\r\n        console.log(this.name);\r\n    }\r\n    \r\n    sayLegsCount(){\r\n        console.log(this.legsCount);\r\n    }\r\n\r\n    saySpeaks(){\r\n        console.log(this.speaks);\r\n    }\r\n\r\n    static myType(){ // does not need an instance of the class to be called. These are associated with the class itself and not the objects.\r\n        console.log('I am an animal');\r\n    }\r\n}\r\n\r\nconst dog = new Animal('dog', 4, 'bark');\r\nconst cat = new Animal('cat', 4, 'meow');\r\n\r\ndog.sayName();\r\ndog.sayLegsCount();"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "dog",
+                                "4",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "let obj = {\r\n    name: 'John',\r\n    age: 30,\r\n    city: 'New York'\r\n};\r\n\r\nlet keys = Object.keys(obj); // Corrected usage of Object.keys()\r\nconsole.log(\"After Object.keys(): \" + keys);\r\n\r\nlet values = Object.values(obj); // Corrected usage of Object.values()\r\nconsole.log(\"After Object.values(): \" + values);\r\n\r\nlet entries = Object.entries(obj); // Corrected usage of Object.entries()\r\nconsole.log(\"After Object.entries(): \" + entries);\r\n\r\nlet hasOwnProp = obj.hasOwnProperty('name');\r\nconsole.log(\"After obj.hasOwnProperty('name'): \" + hasOwnProp);\r\n\r\nlet newObj = Object.assign({}, obj, {gender: \"male\"});\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "After Object.keys(): name,age,city",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

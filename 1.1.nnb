@@ -1,0 +1,126 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "callback funtions"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "function calculate(a, b, operation){\r\n    return operation(a, b);\r\n}\r\n\r\nfunction add(a, b){\r\n    return a + b;\r\n}\r\n\r\nfunction subtract(a, b){\r\n    return a - b;\r\n}\r\n\r\nconsole.log(calculate(1, 2, add));\r\nconsole.log(calculate(4, 2, subtract));"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "3",
+                                "2",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "function greet(){\r\n    console.log('Hello');\r\n}\r\n\r\nsetTimeout(greet, 1000);\r\n\r\n// we are passing function as an argument to another function. This is also a callback function."
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "Timeout {",
+                                "  _idleTimeout: \u001b[33m1000\u001b[39m,",
+                                "  _idlePrev: \u001b[36m[TimersList]\u001b[39m,",
+                                "  _idleNext: \u001b[36m[TimersList]\u001b[39m,",
+                                "  _idleStart: \u001b[33m135990\u001b[39m,",
+                                "  _onTimeout: \u001b[36m[Function: greet]\u001b[39m,",
+                                "  _timerArgs: \u001b[90mundefined\u001b[39m,",
+                                "  _repeat: \u001b[1mnull\u001b[22m,",
+                                "  _destroyed: \u001b[33mfalse\u001b[39m,",
+                                "  [\u001b[32mSymbol(refed)\u001b[39m]: \u001b[33mtrue\u001b[39m,",
+                                "  [\u001b[32mSymbol(kHasPrimitive)\u001b[39m]: \u001b[33mfalse\u001b[39m,",
+                                "  [\u001b[32mSymbol(asyncId)\u001b[39m]: \u001b[33m141\u001b[39m,",
+                                "  [\u001b[32mSymbol(triggerId)\u001b[39m]: \u001b[33m14\u001b[39m",
+                                "}"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Hello",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "function sum(a, b, callback){\r\n    let result = a + b;\r\n    return callback(result);\r\n    // callback(result); // this will not return anything and in output we will get undefined along with the console.log() output.\r\n}\r\n\r\nfunction print(result){\r\n    console.log(\"The result is \" + result);\r\n}\r\n\r\nconsole.log(sum(1, 2, print));"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "The result is 3",
+                                "undefined",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(a)\r\n\r\nvar a = undefined;\r\n\r\nconsole.log(a(2,3))\r\n\r\nvar a = function(a,b){\r\n    return a+b\r\n}\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "1",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
